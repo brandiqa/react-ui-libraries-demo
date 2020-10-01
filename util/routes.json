@@ -1,0 +1,22 @@
+[
+  {
+    "label": "Bulma",
+    "path": "/"
+  },
+  {
+    "label": "Bootstrap",
+    "path": "/bootstrap"
+  },
+  {
+    "label": "Blueprint",
+    "path": "/blueprint"
+  },
+  {
+    "label": "Primefaces",
+    "path": "/primefaces"
+  },
+  {
+    "label": "RSuitejs",
+    "path": "/rsuite"
+  }
+]
