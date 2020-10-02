@@ -5,7 +5,9 @@ import './bulma.module.css'
 const routes = require('../../util/routes.json')
 
 export default function Bulma() {
-  const [{ data, loading, error }, refetch] = useAxios('/api/users')
+  const [{ data, loading, error }, refetch] = useAxios(
+    'http://localhost:3000/api/users'
+  )
 
   if (loading) return <p className="text-gray-500">Loading...</p>
   if (error) return <p className="text-red-700">Error!</p>
@@ -21,16 +23,12 @@ export default function Bulma() {
       <div className="card">
         <div className="card-image">
           <figure className="image is-4by3">
-            <img
-              src="https://bulma.io/images/placeholders/1280x960.png"
-              alt="Placeholder image"
-            ></img>
+            <img src={user.avatar} alt="Placeholder image"></img>
           </figure>
         </div>
         <div className="card-content">
           <div className="media-content">
             <p className="title is-4">{user.name}</p>
-            <p className="subtitle is-6">{user.company.name}</p>
           </div>
         </div>
       </div>
@@ -71,9 +69,7 @@ export default function Bulma() {
         </section>
 
         <section>
-          <div className="columns is-mobile is-multiline is-centered">
-            {userCards}
-          </div>
+          <div className="columns is-mobile is-multiline">{userCards}</div>
         </section>
       </main>
 
